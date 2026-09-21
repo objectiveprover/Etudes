@@ -31,7 +31,7 @@ def SocketClose(socketConnection):
     time.sleep(.300)
 
 def main():
-    remoteIP = "192.168.0.188" # The local address of my Siglent SDS 1202X-E
+    remoteIP = "192.168.0.10" # The local address of my Siglent SDS 1202X-E
     port = 5025 # Raw TCP socket port for IEEE 488.2 communication
 
     # Connect
