@@ -22,7 +22,7 @@ proc waitTest {n} {
     exit
 }
 
-# The `after` function expects miliseconds, and we want to use seconds
+# The `after` function expects milliseconds, and we want to use seconds
 # so we need to multiply and divide by 1000 for convenience
 set waitFor [expr {[randomInRange 2 5] * 1000}]
 chan puts "1. Waiting [expr {$waitFor / 1000}] seconds"
