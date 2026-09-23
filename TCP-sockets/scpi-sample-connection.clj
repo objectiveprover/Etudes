@@ -1,3 +1,8 @@
+;; Note: This file contains code that I got from the web so I could test
+;; the connection with my oscilloscope without getting into the details
+;; of the Java parts of Clojure, specifically the java.net module which I
+;; still need to look into to completely understand what is going on.
+
 (ns scpi
   "Raw-socket SCPI control for my Siglent SDS1202X-E oscilloscope."
   (:require [clojure.string :as str])
@@ -33,6 +38,8 @@
   "Read bytes up to LF, returning a string."
   [^InputStream in]
   (let [buf (ByteArrayOutputStream.)]
+    ;; I'm not sure if (loop) is idiomatic in Clojure, doesn't sound right,
+    ;; am I getting scammed by this code example I got?
     (loop []
       (let [b (.read in)]
         (cond
@@ -48,6 +55,8 @@
 
 ;; ---------------------------------------------------------------------------
 ;; Test area
+;;
+;; I can just evaluate these things interactively in the Clojure REPL
 
 (comment
   (def scope (connect "192.168.0.10" 5025)) ; Setting my IP manually for testing

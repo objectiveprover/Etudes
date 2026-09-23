@@ -2,6 +2,11 @@ import socket
 import sys
 import time
 
+# Note: This file contains code that I got from the web so I could test
+# the connection with my oscilloscope, it has the same function as the
+# Clojure example in this same directory. I like that I don't need to
+# know about the context of an external language like Java.
+
 def SocketConnect(remote_ip, port):
     socketConnection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
